@@ -1,51 +1,50 @@
-<DOCTYPE! html><html>
-<head>
-<title>
-Web Form
-</title>
-</head>
-<body>
-<h1>
+<DOCTYPE! html>
+    <html>
+    <head>
+        <title>
+            Web Form
+        </title>
+        <script>
+            function process() {
+                alert("Hello");
+            }•
+            function checkName(nameInput) {
+                alert(nameInput.value);
+            }
+        </script>
+    </head>
+    <body>
+        <h1>
 Subscribe to Services
-</h1>
-<form>
-First Name: 
-<input type = "text" name = "First Name"/>
-<br>
-Last Name:
-<input type = "text" name = "Last Name"/>
-<br>
-Birth Date (mm/dd/yyyy):
-<input type = "text" name = "Birth Date"/>
-<br>
-Gender:
-Male
-<input type = "radio" name = "Male" value = "Male"/>
-Female
-<input type = "radio" name = "Female" value = "Female"/>
-<br>
-Phone Number:
-<input type = "text" name = "First Name"/>
-<br>
-Email Address:
-<input type = "text" name = "First Name"/>
-<br>
-Other Personal Information <br />
-<textarea rows = "5" cols = "50" name = "Other Personal Information">
-Enter Information Here...
-</textarea>
-<br>
-Attatch Resume Here
-<br>
-Notifications
-<select name = "dropdown">
-<option value = "Recieve Notifications" selected> Recieve Notifications</option>
-<option value = "Do Not Recieve Notifications">Do Not Recieve Notifications</option>
-</select>
-<br>
-<input type = "submit" name = "submit" value = "Submit"/>
-<input type = "reset" name = "reset" value = "Reset"/>
-</form>
-</body>
-</html>
+      </h1>
+        <form onsubmit="process()">
+            First Name:
+            <input type="text" name="First Name" onblur="checkName(this)" />
+            <br> Last Name:
+            <input type="text" name="Last Name" />
+            <br> Birth Date (mm/dd/yyyy):
+            <input type="text" name="Birth Date" />
+            <br> Gender: Male
+            <input type="radio" name="Male" value="Male" /> Female
+            <input type="radio" name="Female" value="Female" />
+            <br> Phone Number:
+            <input type="text" Email Address:>
+            <br> Other Personal Information
+            <br />
+            <textarea rows="5" cols="50" name="Other Personal Information">
+                Enter Information Here...
+            </textarea>
+            <br> Attatch Resume Here
+            <br> Notifications
+            <select name="dropdown">
+                <option value="Recieve Notifications" selected> Recieve Notifications</option>
+                <option value="Do Not Recieve Notifications">Do Not Recieve Notifications</option>
+            </select>
+            <br>    
+            <input type="submit" name="submit" value="Submit" />
+            <input type="reset" name="reset" value="Reset" />
+        </form>
+      </body>
+  </html>
+ 
 
