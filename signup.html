@@ -9,7 +9,10 @@
                 alert("Hello");
             }
             function checkName(nameInput) {
-                alert(nameInput.value);
+                if (nameInput.value.length < 2){
+nameInput.focus();
+alert("Your Name is Too Short:" + nameInput.value);
+}
             }
         </script>
     </head>
