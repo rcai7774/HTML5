@@ -5,11 +5,12 @@
             Web Form
         </title>
         <script>
-            function process() 
-            {alert("Hello")} 
-            <DOCTYPE! html>
-            function checkName(nameInput) 
-            {alert(nameInput.value);}
+            function process() {
+                alert("Hello");
+            }
+            function checkName(nameInput) {
+                alert(nameInput.value);
+            }
         </script>
     </head>
     <body>
@@ -18,7 +19,7 @@ Subscribe to Services
       </h1>
         <form onsubmit="process()">
             First Name:
-            <input type="text" name="First Name" onblur="checkName(this)" />
+            <input type="text" name="First Name" onchange="checkName(this)"/>
             <br> Last Name:
             <input type="text" name="Last Name" />
             <br> Birth Date (mm/dd/yyyy):
@@ -45,4 +46,3 @@ Subscribe to Services
         </form>
       </body>
   </html> 
-
