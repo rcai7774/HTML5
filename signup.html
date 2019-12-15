@@ -13,6 +13,9 @@
 nameInput.focus();
 alert("Your Name is Too Short:" + nameInput.value);
                 }
+                else {
+                nameInput.value = toProperCase (nameInput.value);
+                }
             }
             function toProperCase(username){return username.slice(0,1).toUpperCase()+username.slice(1).toLowerCase()};
         </script>
@@ -26,7 +29,7 @@ Subscribe to Services
             <input type="text" name="First Name" onchange="checkName(this)"/>
             <br> Last Name:
             <input type="text" name="Last Name" 
-onchange="toProper Case (this)"/>
+            onchange="checkName(this)"/>
             <br> Birth Date (mm/dd/yyyy):
             <input type="text" name="Birth Date" />
             <br> Gender: Male
@@ -37,7 +40,7 @@ onchange="toProper Case (this)"/>
             <br> Other Personal Information
             <br />
             <textarea rows="5" cols="50" name="Other Personal Information">
-                Enter Information Here...
+Enter Information Here...
             </textarea>
             <br> Attatch Resume Here
             <br> Notifications
@@ -50,4 +53,4 @@ onchange="toProper Case (this)"/>
             <input type="reset" name="reset" value="Reset" />
         </form>
       </body>
-  </html> 
+  </html>
