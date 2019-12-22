@@ -11,6 +11,7 @@
             function checkName(nameInput) {
                 if (nameInput.value.length < 2){
 nameInput.focus();
+alert("Your Name is Too Short:" + nameInput.value);
 alert("Your Name is Too Short: " + nameInput.value);
                 }
                 else {
@@ -18,6 +19,18 @@ alert("Your Name is Too Short: " + nameInput.value);
                 }
             }
             function toProperCase(username){return username.slice(0,1).toUpperCase()+username.slice(1).toLowerCase()};
+            function checkBirthday(BirthdayInput)	{alert(BirthdayInput.value);
+       let date=
+       new Date(BirthdayInput.value);
+       alert(date);
+       let year=
+       date.getYear();
+       let now=
+       new Date();
+       alert(year+now);
+       let age = now.getYear()-year;
+       alert(age);
+            }
         </script>
     </head>
     <body>
@@ -31,7 +44,7 @@ Subscribe to Services
             <input type="text" name="Last Name" 
             onchange="checkName(this)"/>
             <br> Birth Date (mm/dd/yyyy):
-            <input type="text" name="Birth Date" />
+            <input type= "date" name="Birth Date" onchange = "checkBirthday(this)"/>
             <br> Gender: Male
             <input type="radio" name="Male" value="Male" /> Female
             <input type="radio" name="Female" value="Female" />
@@ -42,6 +55,7 @@ Subscribe to Services
             <textarea rows="5" cols="50" name="Other Personal Information">
 Enter Information Here...
             </textarea>
+            <br> Attatch Resume Here
             <br> Notifications
             <select name="dropdown">
                 <option value="Recieve Notifications" selected> Recieve Notifications</option>
