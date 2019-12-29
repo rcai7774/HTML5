@@ -12,7 +12,7 @@
                 if (nameInput.value.length < 2){
 nameInput.focus();
 alert("Your Name is Too Short:" + nameInput.value);
-alert("Your Name is Too Short: " + nameInput.value);
+alert("Your Name is Too Short:" + nameInput.value);
                 }
                 else {
                 nameInput.value = toProperCase (nameInput.value);
@@ -31,6 +31,17 @@ alert("Your Name is Too Short: " + nameInput.value);
        let age = now.getYear()-year;
        alert(age);
             }
+            function checkAge(AgeInput){
+            alert(AgeInput.value);
+            if (AgeInput.value < 5){
+            AgeInput.focus();
+            alert ("Your Age is too Small: " + AgeInput.value);
+            }
+            else
+            if (AgeInput.value > 100){
+            alert ("Your Age is too Big: " + AgeInput.value);
+            }
+            }
         </script>
     </head>
     <body>
@@ -45,6 +56,8 @@ Subscribe to Services
             onchange="checkName(this)"/>
             <br> Birth Date (mm/dd/yyyy):
             <input type= "date" name="Birth Date" onchange = "checkBirthday(this)"/>
+            <br> Age
+            <input type = "number" name="Age" onchange = "checkAge(this)"/>
             <br> Gender: Male
             <input type="radio" name="Male" value="Male" /> Female
             <input type="radio" name="Female" value="Female" />
@@ -67,3 +80,4 @@ Enter Information Here...
         </form>
       </body>
   </html>
+
