@@ -42,6 +42,9 @@ alert("Your Name is Too Short:" + nameInput.value);
             alert ("Your Age is too Big: " + AgeInput.value);
             }
             }
+            function checkGender(Gender){
+            alert(Gender)
+            }
         </script>
     </head>
     <body>
@@ -59,8 +62,8 @@ Subscribe to Services
             <br> Age
             <input type = "number" name="Age" onchange = "checkAge(this)"/>
             <br> Gender: Male
-            <input type="radio" name="Male" value="Male" /> Female
-            <input type="radio" name="Female" value="Female" />
+            <input type="radio" name="Gender" value="Male" onchange = "checkGender('male')"/> Female
+            <input type="radio" name="Gender" value="Female" onchange = "checkGender('female')"/>
             <br> Phone Number:
             <input type="text" Email Address:>
             <br> Other Personal Information
