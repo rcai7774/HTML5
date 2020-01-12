@@ -1,5 +1,6 @@
 <DOCTYPE! html>
     <html>
+
     <head>
         <title>
             Web Form
@@ -8,79 +9,99 @@
             function process() {
                 alert("Hello");
             }
+
             function checkName(nameInput) {
-                if (nameInput.value.length < 2){
-nameInput.focus();
-alert("Your Name is Too Short:" + nameInput.value);
-alert("Your Name is Too Short:" + nameInput.value);
-                }
-                else {
-                nameInput.value = toProperCase (nameInput.value);
+                if (nameInput.value.length < 2) {
+                    nameInput.focus();
+                    alert("Your Name is Too Short:" + nameInput.value);
+                } else {
+                    nameInput.value = toProperCase(nameInput.value);
                 }
             }
-            function toProperCase(username){return username.slice(0,1).toUpperCase()+username.slice(1).toLowerCase()};
-            function checkBirthday(BirthdayInput)	{alert(BirthdayInput.value);
-       let date=
-       new Date(BirthdayInput.value);
-       alert(date);
-       let year=
-       date.getYear();
-       let now=
-       new Date();
-       alert(year+now);
-       let age = now.getYear()-year;
-       alert(age);
+
+            function toProperCase(username) {
+                return username.slice(0, 1).toUpperCase() + username.slice(1).toLowerCase()
+            };
+
+            function checkBirthday(BirthdayInput) {
+                alert(BirthdayInput.value);
+                let date =
+                    new Date(BirthdayInput.value);
+                alert(date);
+                let year =
+                    date.getYear();
+                let now =
+                    new Date();
+                alert(year + now);
+                let age = now.getYear() - year;
+                alert(age);
             }
-            function checkAge(AgeInput){
-            alert(AgeInput.value);
-            if (AgeInput.value < 5){
-            AgeInput.focus();
-            alert ("Your Age is too Small: " + AgeInput.value);
+
+            function checkAge(AgeInput) {
+                alert(AgeInput.value);
+                if (AgeInput.value < 5) {
+                    AgeInput.focus();
+                    alert("Your Age is too Small: " + AgeInput.value);
+                } else
+                if (AgeInput.value > 100) {
+                    alert("Your Age is too Big: " + AgeInput.value);
+                }
             }
-            else
-            if (AgeInput.value > 100){
-            alert ("Your Age is too Big: " + AgeInput.value);
+
+            function checkGender(Gender) {
+                alert(Gender)
             }
-            }
-            function checkGender(Gender){
-            alert(Gender)
+
+            function checkPassword(PasswordInput) {
+
+                if (PasswordInput.value.length < 8) {
+                    PasswordInput.focus();
+                }
+                alert("Your PassWord is too Small: PassWords have to be at least 8 letters or numbers long");
+                if (PasswordInput.value === PasswordInput.value.toLowerCase() || PasswordInput.value === PasswordInput.value.toUpperCase()) {
+                    alert("Your PassWord needs to have different cased letters");
+                }
             }
         </script>
     </head>
+
     <body>
         <h1>
 Subscribe to Services
       </h1>
         <form onsubmit="process()">
             First Name:
-            <input type="text" name="First Name" onchange="checkName(this)"/>
+            <input type="text" name="First Name" onchange="checkName(this)" />
             <br> Last Name:
-            <input type="text" name="Last Name" 
-            onchange="checkName(this)"/>
+            <input type="text" name="Last Name" onchange="checkName(this)" />
             <br> Birth Date (mm/dd/yyyy):
-            <input type= "date" name="Birth Date" onchange = "checkBirthday(this)"/>
+            <input type="date" name="Birth Date" onchange="checkBirthday(this)" />
             <br> Age
-            <input type = "number" name="Age" onchange = "checkAge(this)"/>
+            <input type="number" name="Age" onchange="checkAge(this)" />
             <br> Gender: Male
-            <input type="radio" name="Gender" value="Male" onchange = "checkGender('male')"/> Female
-            <input type="radio" name="Gender" value="Female" onchange = "checkGender('female')"/>
+            <input type="radio" name="Gender" value="Male" onchange="checkGender('male')" /> Female
+            <input type="radio" name="Gender" value="Female" onchange="checkGender('female')" />
             <br> Phone Number:
-            <input type="text" Email Address:>
+            <input type="number" name="Phone Number" />
+            <br> Email Address
+            <input type="text" name="Email Address" />
             <br> Other Personal Information
             <br />
             <textarea rows="5" cols="50" name="Other Personal Information">
-Enter Information Here...
+                Enter Information Here...
             </textarea>
-            <br> Attatch Resume Here
+            <br>Set PassWord
+            <input type="password" name="password" onchange="checkPassword(this)" />
             <br> Notifications
             <select name="dropdown">
                 <option value="Recieve Notifications" selected> Recieve Notifications</option>
                 <option value="Do Not Recieve Notifications">Do Not Recieve Notifications</option>
             </select>
-            <br>    
+            <br>
             <input type="submit" name="submit" value="Submit" />
             <input type="reset" name="reset" value="Reset" />
         </form>
-      </body>
-  </html>
+    </body>
+
+    </html>
 
