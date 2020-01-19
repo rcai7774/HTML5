@@ -62,6 +62,7 @@
                     alert("Your PassWord needs to have different cased letters");
                 }
                 let hasNumber = false;
+                debugger;
                 for (let i = 0;  i<PasswordInput.value.length; i++) {
                     if (0 * PasswordInput.value[i] === 0) {
                         hasNumber = true;
@@ -89,7 +90,7 @@ Subscribe to Services
             <input type="radio" name="Gender" value="Male" onchange="checkGender('male')" /> Female
             <input type="radio" name="Gender" value="Female" onchange="checkGender('female')" />
             <br> Phone Number:
-            <input type="number" name="Phone Number" />
+            <input type="text" name="Phone Number" onchange = "checkPhonenumber(this)"/>
             <br> Email Address
             <input type="text" name="Email Address" />
             <br> Other Personal Information
