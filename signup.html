@@ -78,6 +78,11 @@
             	if (0 * Phonenumber[n] === 0){cleanNumber += Phonenumber[n]}
             }
             alert(cleanNumber)
+            if(cleanNumber.length<10)
+    	    alert("You do not have your full Phone Number")
+            if(cleanNumber[0]==='1')
+            cleanNumber=cleanNumber.slice(1)
+            alert('This is your number without the "1" in it: '+cleanNumber)
             }
         </script>
     </head>
