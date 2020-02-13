@@ -71,18 +71,23 @@
                 }
                 if(!hasNumber)alert ('You need to have a number in your PassWord')
             }
-            function checkPhonenumber(Phonenumber){
-            alert(Phonenumber)
-            let cleanNumber="";
-            for(let n = 0; n < Phonenumber.length; n++) {
-            	if (0 * Phonenumber[n] === 0){cleanNumber += Phonenumber[n]}
-            }
+            function checkPhoneNumber(phoneNumberInput){
+            debugger;
+            phoneNumber = phoneNumberInput.value
+            alert(phoneNumberInput)
+            let cleanNumber = "";
+            for (let n = 0; n < phoneNumberInput.length; n++){
+            if (0*phoneNumberInput[n]===0){cleanNumber += phoneNumberInput[n]}
+            } 
+            if (cleanNumber.length < 10) alert("You do not have your full phone number.")
+            if (cleanNumber[0]==="1")
+            cleanNumber = cleanNumber.slice(1)
             alert(cleanNumber)
-            if(cleanNumber.length<10)
-    	    alert("You do not have your full Phone Number")
-            if(cleanNumber[0]==='1')
-            cleanNumber=cleanNumber.slice(1)
-            alert('This is your number without the "1" in it: '+cleanNumber)
+            alert ("This is yout phone number without the 1 in it." + cleanNumber)
+            phoneNumberInput.value = cleanNumber
+            
+            
+            
             }
         </script>
     </head>
@@ -104,7 +109,7 @@ Subscribe to Services
             <input type="radio" name="Gender" value="Male" onchange="checkGender('male')" /> Female
             <input type="radio" name="Gender" value="Female" onchange="checkGender('female')" />
             <br> Phone Number:
-            <input type="text" name="Phone Number" onchange = "checkPhonenumber(this.value)"/>
+            <input type="text" name="Phone Number" onchange = "checkPhoneNumber(this.value)"/>
             <br> Email Address
             <input type="text" name="Email Address" />
             <br> Other Personal Information
