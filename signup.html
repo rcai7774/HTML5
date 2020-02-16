@@ -1,133 +1,134 @@
 <!DOCTYPE html>
-    <html>
+<html>
 
-    <head>
-        <title>
-            Web Form
-        </title>
-        <script>
-            function process() {
-                alert("Hello");
+<head>
+    <title>
+        Web Form
+    </title>
+    <script>
+        function process() {
+            alert("Hello");
+        }
+
+        function checkName(nameInput) {
+            if (nameInput.value.length < 2) {
+                nameInput.focus();
+                alert("Your Name is Too Short:" + nameInput.value);
+            } else {
+                nameInput.value = toProperCase(nameInput.value);
             }
+        }
 
-            function checkName(nameInput) {
-                if (nameInput.value.length < 2) {
-                    nameInput.focus();
-                    alert("Your Name is Too Short:" + nameInput.value);
-                } else {
-                    nameInput.value = toProperCase(nameInput.value);
+        function toProperCase(username) {
+            return username.slice(0, 1).toUpperCase() + username.slice(1).toLowerCase()
+        };
+
+        function checkBirthday(BirthdayInput) {
+            alert(BirthdayInput.value);
+            let date =
+                new Date(BirthdayInput.value);
+            alert(date);
+            let year =
+                date.getYear();
+            let now =
+                new Date();
+            alert(year + now);
+            let age = now.getYear() - year;
+            alert(age);
+        }
+
+        function checkAge(AgeInput) {
+            alert(AgeInput.value);
+            if (AgeInput.value < 5) {
+                AgeInput.focus();
+                alert("Your Age is too Small: " + AgeInput.value);
+            } else
+            if (AgeInput.value > 100) {
+                alert("Your Age is too Big: " + AgeInput.value);
+            }
+        }
+
+        function checkGender(Gender) {
+            alert(Gender)
+        }
+
+        function checkPassword(PasswordInput) {
+
+            if (PasswordInput.value.length < 8) {
+                PasswordInput.focus();
+            }
+            alert("Your PassWord is too Small: PassWords have to be at least 8 letters or numbers long");
+            if (PasswordInput.value === PasswordInput.value.toLowerCase() || PasswordInput.value === PasswordInput.value.toUpperCase()) {
+                alert("Your PassWord needs to have different cased letters");
+            }
+            let hasNumber = false;
+            debugger;
+            for (let i = 0; i < PasswordInput.value.length; i++) {
+                if (0 * PasswordInput.value[i] === 0) {
+                    hasNumber = true;
+                    break;
                 }
             }
+            if (!hasNumber) alert('You need to have a number in your PassWord')
+        }
 
-            function toProperCase(username) {
-                return username.slice(0, 1).toUpperCase() + username.slice(1).toLowerCase()
-            };
-
-            function checkBirthday(BirthdayInput) {
-                alert(BirthdayInput.value);
-                let date =
-                    new Date(BirthdayInput.value);
-                alert(date);
-                let year =
-                    date.getYear();
-                let now =
-                    new Date();
-                alert(year + now);
-                let age = now.getYear() - year;
-                alert(age);
-            }
-
-            function checkAge(AgeInput) {
-                alert(AgeInput.value);
-                if (AgeInput.value < 5) {
-                    AgeInput.focus();
-                    alert("Your Age is too Small: " + AgeInput.value);
-                } else
-                if (AgeInput.value > 100) {
-                    alert("Your Age is too Big: " + AgeInput.value);
-                }
-            }
-
-            function checkGender(Gender) {
-                alert(Gender)
-            }
-
-            function checkPassword(PasswordInput) {
-
-                if (PasswordInput.value.length < 8) {
-                    PasswordInput.focus();
-                }
-                alert("Your PassWord is too Small: PassWords have to be at least 8 letters or numbers long");
-                if (PasswordInput.value === PasswordInput.value.toLowerCase() || PasswordInput.value === PasswordInput.value.toUpperCase()) {
-                    alert("Your PassWord needs to have different cased letters");
-                }
-                let hasNumber = false;
-                debugger;
-                for (let i = 0;  i<PasswordInput.value.length; i++) {
-                    if (0 * PasswordInput.value[i] === 0) {
-                        hasNumber = true;
-                        break;
-                    }
-                }
-                if(!hasNumber)alert ('You need to have a number in your PassWord')
-            }
-            function checkPhoneNumber(phoneNumberInput){
+        function checkPhoneNumber(phoneNumberInput) {
             debugger;
             phoneNumber = phoneNumberInput.value
-            alert(phoneNumberInput)
+            alert(phoneNumber)
             let cleanNumber = "";
-            for (let n = 0; n < phoneNumberInput.length; n++){
-            if (0*phoneNumberInput[n]===0){cleanNumber += phoneNumberInput[n]}
-            } 
-            if (cleanNumber.length < 10) alert("You do not have your full phone number.")
-            if (cleanNumber[0]==="1")
-            cleanNumber = cleanNumber.slice(1)
-            alert(cleanNumber)
-            alert ("This is yout phone number without the 1 in it." + cleanNumber)
-            phoneNumberInput.value = cleanNumber
-            
-            
-            
+            for (let n = 0; n < phoneNumber.length; n++) {
+                if (0 * phoneNumber[n] === 0) {
+                    cleanNumber += phoneNumber[n]
+                }
             }
-        </script>
-    </head>
+            if (cleanNumber.length < 10) alert("You do not have your full phone number.")
+            if (cleanNumber[0] === "1")
+                cleanNumber = cleanNumber.slice(1)
+            alert(cleanNumber)
+            alert("This is yout phone number without the 1 in it." + cleanNumber)
+            phoneNumberInput.value = cleanNumber
 
-    <body>
-        <h1>
+        }
+    </script>
+</head>
+
+<body>
+    <h1>
 Subscribe to Services
       </h1>
-        <form onsubmit="process()">
-            First Name:
-            <input type="text" name="First Name" onchange="checkName(this)" />
-            <br> Last Name:
-            <input type="text" name="Last Name" onchange="checkName(this)" />
-            <br> Birth Date (mm/dd/yyyy):
-            <input type="date" name="Birth Date" onchange="checkBirthday(this)" />
-            <br> Age
-            <input type="number" name="Age" onchange="checkAge(this)" />
-            <br> Gender: Male
-            <input type="radio" name="Gender" value="Male" onchange="checkGender('male')" /> Female
-            <input type="radio" name="Gender" value="Female" onchange="checkGender('female')" />
-            <br> Phone Number:
-            <input type="text" name="Phone Number" onchange = "checkPhoneNumber(this.value)"/>
-            <br> Email Address
-            <input type="text" name="Email Address" />
-            <br> Other Personal Information
-            <br />
-            <textarea rows="5" cols="50" name="Other Personal Information">
-                Enter Information Here...
-            </textarea>
-            <br>Set PassWord
-            <input type="password" name="password" onchange="checkPassword(this)" />
-            <br> Notifications
-            <select name="dropdown">
-                <option value="Recieve Notifications" selected> Recieve Notifications</option>
-                <option value="Do Not Recieve Notifications">Do Not Recieve Notifications</option>
-            </select>
-            <br>
-            <input type="submit" name="submit" value="Submit" />
-            <input type="reset" name="reset" value="Reset" />
-        </form>
-    </body>
+    <form onsubmit="process()">
+        First Name:
+        <input type="text" name="First Name" onchange="checkName(this)" />
+        <br> Last Name:
+        <input type="text" name="Last Name" onchange="checkName(this)" />
+        <br> Birth Date (mm/dd/yyyy):
+        <input type="date" name="Birth Date" onchange="checkBirthday(this)" />
+        <br> Age
+        <input type="number" name="Age" onchange="checkAge(this)" />
+        <br> Gender: Male
+        <input type="radio" name="Gender" value="Male" onchange="checkGender('male')" /> Female
+        <input type="radio" name="Gender" value="Female" onchange="checkGender('female')" />
+        <br> Phone Number:
+        <input type="text" name="Phone Number" onchange="checkPhoneNumber(this)" />
+        <br> Email Address
+        <input type="text" name="Email Address" />
+        <br> Other Personal Information
+        <br />
+        <textarea rows="5" cols="50" name="Other Personal Information">
+            Enter Information Here...
+        </textarea>
+        <br>Set PassWord
+        <input type="password" name="password" onchange="checkPassword(this)" />
+        <br> Notifications
+        <select name="dropdown">
+            <option value="Recieve Notifications" selected> Recieve Notifications</option>
+            <option value="Do Not Recieve Notifications">Do Not Recieve Notifications</option>
+        </select>
+        <br>
+        <input type="submit" name="submit" value="Submit" />
+        <input type="reset" name="reset" value="Reset" />
+    </form>
+</body>
 
-    </html>
+</html>
