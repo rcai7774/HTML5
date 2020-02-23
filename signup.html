@@ -86,9 +86,18 @@
             if (cleanNumber[0] === "1")
                 cleanNumber = cleanNumber.slice(1)
             alert(cleanNumber)
-            alert("This is yout phone number without the 1 in it." + cleanNumber)
+            alert("This is your phone number without the 1 in it." + cleanNumber)
             phoneNumberInput.value = cleanNumber
 
+        }
+
+        function checkEmail(Email) {
+
+            if (Email.indexOf("@") > 1 && Email.lastIndexOf(".") > Email.indexOf("@")) {
+                alert(Email)
+            } else {
+                alert("Your email is not complete")
+            }
         }
     </script>
 </head>
@@ -112,7 +121,7 @@ Subscribe to Services
         <br> Phone Number:
         <input type="text" name="Phone Number" onchange="checkPhoneNumber(this)" />
         <br> Email Address
-        <input type="text" name="Email Address" />
+        <input type="text" name="Email Address" onchange="checkEmail(this.value)" />
         <br> Other Personal Information
         <br />
         <textarea rows="5" cols="50" name="Other Personal Information">
