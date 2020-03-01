@@ -99,6 +99,19 @@
                 alert("Your email is not complete")
             }
         }
+
+        function checkInfo(info) {
+            alert(info)
+            let words = info.split(" ");
+            if (words.length < 10) {
+                alert("You need to type more in this input field")
+            }
+            let sentence = info.split(".");
+            if (sentence.length < 3) {
+                alert("Please enter at least two sentences")
+            }
+
+        }
     </script>
 </head>
 
@@ -122,11 +135,9 @@ Subscribe to Services
         <input type="text" name="Phone Number" onchange="checkPhoneNumber(this)" />
         <br> Email Address
         <input type="text" name="Email Address" onchange="checkEmail(this.value)" />
-        <br> Other Personal Information
+        <br> Other Personal Information (2 sentences)
         <br />
-        <textarea rows="5" cols="50" name="Other Personal Information">
-            Enter Information Here...
-        </textarea>
+        <textarea rows="5" cols="50" name="Info" onchange="checkInfo (this.value)">Enter Information Here...</textarea>
         <br>Set PassWord
         <input type="password" name="password" onchange="checkPassword(this)" />
         <br> Notifications
