@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
+<head>
 <script>
-let name = "Who"
+let firstName = localStorage.getItem("firstName")
+let lastName = localStorage.getItem("lastName")
 let gender = "male"
 let age = 14
 </script>
@@ -12,11 +14,13 @@ let age = 14
 
 <h2>Thank you for signing up!</h2>
 Dear
-<span id = "name"></span>
+<span id = "firstName"></span>
+<span id = "lastName"></span>
 
 <script>
 
-document.getElementById("name").innerHtml = name;
+document.getElementById("firstName").innerHTML = firstName;
+document.getElementById("lastName").innerHTML = lastName;
 </script>
 
 </body>
