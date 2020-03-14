@@ -10,14 +10,23 @@
             alert("Hello");
         }
 
-        function checkName(nameInput) {
-            if (nameInput.value.length < 2) {
-                nameInput.focus();
-                alert("Your Name is Too Short:" + nameInput.value);
+        function checkFirstName(FirstNameInput) {
+            if (FirstNameInput.value.length < 2) {
+                FirstNameInput.focus();
+                alert("Your First Name is Too Short:" + FirstNameInput.value);
             } else {
-                nameInput.value = toProperCase(nameInput.value);
+                FirstNameInput.value = toProperCase(FirstNameInput.value);
             }
-        }
+            localStorage.setItem("firstName",FirstNameInput.value)}
+            
+        function checkLastName(LastNameInput) {
+            if (LastNameInput.value.length < 2) {
+                LastNameInput.focus();
+                alert("Your Last Name is Too Short:" + LastNameInput.value);
+            } else {
+                LastNameInput.value = toProperCase(LastNameInput.value);
+            }
+            localStorage.setItem("lastName",LastNameInput.value)}
 
         function toProperCase(username) {
             return username.slice(0, 1).toUpperCase() + username.slice(1).toLowerCase()
@@ -122,9 +131,9 @@ Subscribe to Services
       </h1>
     <form onsubmit="process()">
         First Name:
-        <input type="text" name="First Name" onchange="checkName(this)" />
+        <input type="text" name="First Name" onchange="checkFirstName(this)" />
         <br> Last Name:
-        <input type="text" name="Last Name" onchange="checkName(this)" />
+        <input type="text" name="Last Name" onchange="checkLastName(this)" />
         <br> Birth Date (mm/dd/yyyy):
         <input type="date" name="Birth Date" onchange="checkBirthday(this)" />
         <br> Age
