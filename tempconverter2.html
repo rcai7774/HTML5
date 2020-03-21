@@ -24,6 +24,19 @@ Celsius <input type = "number" name = "Celsius" id = "celsius" oninput = "conver
    <input type="reset" name="reset" value="Reset" />
 </form>
 
+<table>
+<tr><th>Fahrenheit</th>
+<th>Celsius</th>
+</tr>
+<script>
+for(let n = 0; n < 201; n++){
+document.write(
+"<tr><td>" + n + "</td><td>" + ((n-32)/1.8)+ "</td></tr>"
+)
+}
+</script>
+</table>
+
 </body>
 
 </html>
