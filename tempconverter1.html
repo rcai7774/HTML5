@@ -39,7 +39,7 @@ Fahrenheit <input type = "number" name = "Fahrenheit" id = "fahrenheit" oninput 
 <script>
 for(let n = 0; n < 201; n++){
 document.write(
-"<tr><td>" + n + "</td><td>" + ((n-32)/1.8)+ "</td></tr>"
+"<tr><td>" + n + "</td><td>" + Math.round((n-32)/1.8)+ "</td></tr>"
 )
 }
 </script>
