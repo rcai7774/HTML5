@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<style>
+table,th,td {
+border: 1px solid grey;
+}
+</style>
 </head>
 
 <body>
@@ -31,7 +35,7 @@ Celsius <input type = "number" name = "Celsius" id = "celsius" oninput = "conver
 <script>
 for(let n = 0; n < 201; n++){
 document.write(
-"<tr><td>" + n + "</td><td>" + ((n-32)/1.8)+ "</td></tr>"
+"<tr><td>" + n + "</td><td>" + Math.round((n-32)/1.8)+ "</td></tr>"
 )
 }
 </script>
