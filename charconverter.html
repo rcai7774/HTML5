@@ -9,13 +9,10 @@ border: 1px solid cyan;
 
 <script>
 function convert(conInput){
-if(isNaN(conInput)){
-document.getElementById("result").innerText = conInput.charCodeAt(0)
+document.getElementById("code").value = conInput.charCodeAt(0)
 }
-else {
-document.getElementById("result").innerText=String.fromCharCode(conInput);
-}
-
+function convertCode(codeInput){
+document.getElementById("char").value = String.fromCharCode(codeInput);
 }
 </script>
 </head>
@@ -25,9 +22,9 @@ document.getElementById("result").innerText=String.fromCharCode(conInput);
 
 <p> The Code to Character Converter shows you the conversions of characters in code.</p>
 
-<input type = "text" name = "converter" onchange= "convert(this.value)" />
+<input type = "number" name = "code" id = "code" oninput = "convertCode(this.value)" />
 
-<output type = "text" id = "result" />
+<input type = "text" name = "character" id = "char" oninput = "convert(this.value)"/>
 
 <table>
 <tr><th>Code</th>
@@ -43,3 +40,4 @@ document.write(
 </table>
 </body>
 </html>
+
