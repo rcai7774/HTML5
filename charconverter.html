@@ -9,7 +9,13 @@ border: 1px solid cyan;
 
 <script>
 function convert(conInput){
-document.getElementById("code").value = conInput.charCodeAt(0)
+let num = "";
+debugger;
+for(let f = 0; f < conInput.length; f++){
+num += conInput.charCodeAt(f) + ",";
+}
+num = num . slice(0,num.length-1)
+document.getElementById("code").value = num
 }
 function convertCode(codeInput){
 document.getElementById("char").value = String.fromCharCode(codeInput);
@@ -22,7 +28,7 @@ document.getElementById("char").value = String.fromCharCode(codeInput);
 
 <p> The Code to Character Converter shows you the conversions of characters in code.</p>
 
-<input type = "number" name = "code" id = "code" oninput = "convertCode(this.value)" />
+<input type = "text" name = "code" id = "code" oninput = "convertCode(this.value)" />
 
 <input type = "text" name = "character" id = "char" oninput = "convert(this.value)"/>
 
@@ -40,4 +46,3 @@ document.write(
 </table>
 </body>
 </html>
-
