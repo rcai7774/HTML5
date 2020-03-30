@@ -18,7 +18,9 @@ num = num . slice(0,num.length-1)
 document.getElementById("code").value = num
 }
 function convertCode(codeInput){
-document.getElementById("char").value = String.fromCharCode(codeInput);
+let character = codeInput.split(",")
+
+document.getElementById("char").value = String.fromCharCode(...character);
 }
 </script>
 </head>
@@ -37,7 +39,7 @@ document.getElementById("char").value = String.fromCharCode(codeInput);
 <th>char</th>
 </tr>
 <script>
-for(let r = 1;r<1000;r++){
+for(let r = 1;r<10000;r++){
 document.write(
 "<tr><td>" + r + "</td><td>" + String.fromCharCode(r) + "</td></tr>"
 )
