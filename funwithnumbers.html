@@ -11,6 +11,15 @@ else{
 document.getElementById("result").innerText = "it is odd!"
 }
 }
+  function perS(){
+    document.getElementById("num").value
+    for(let i = 1; i <1000; i++){
+      if (i*i == num){
+        document.getElementById("result").innerText = "Perfect Square";
+        break;
+        document.getElementById("result").innerText= "Not a Perfect Square"
+      }
+    }
 </script>
 </head>
 
@@ -21,7 +30,7 @@ document.getElementById("result").innerText = "it is odd!"
 <input type = " number "  id =  "num">
 </p>
 <button type = "button" onclick = "isOdd()"> is odd? </button>
-<button type = "button" onclick = "isOdd()"> is perfect square? />
+<button type = "button" onclick = "perS()"> is perfect square? />
 <output id = "result" />
 </body>
 
