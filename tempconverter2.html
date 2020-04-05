@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<style>
-table,th,td {
-border: 1px solid grey;
-}
-</style>
+	<style>
+		table,
+		th,
+		td {
+			border: 1px solid grey;
+		}
+	</style>
 </head>
 
 <body>
-<h1>
-Temperature Converter
-</h1>
-<script>
-function convertFahrenheit(fahrenheitInput){
+	<h1>
+		Temperature Converter
+	</h1>
+	<script>
+		function convertFahrenheit(fahrenheitInput){
 document.getElementById("celsius").value = (fahrenheitInput.value - 32) / 1.8 
 }
 
 function convertCelsius(celsiusInput){
 document.getElementById("fahrenheit").value = celsiusInput.value * 1.8 + 32
 }
-</script>
-<form>
-Fahrenheit <input type = "number" name = "Fahrenheit" id = "fahrenheit" oninput = "convertFahrenheit(this)" />
+
+	</script>
+	<form>
+		Fahrenheit <input type = "number" name = "Fahrenheit" id = "fahrenheit" oninput = "convertFahrenheit(this)" />
 Celsius <input type = "number" name = "Celsius" id = "celsius" oninput = "convertCelsius(this)" />
    <br>
    <input type="reset" name="reset" value="Reset" />

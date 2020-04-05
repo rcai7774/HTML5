@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-<style>
-table, th, td {
-border: 1px solid cyan;
-}
-</style>
 
-<script>
-function convert(conInput){
+<head>
+	<style>
+		table,
+		th,
+		td {
+			border: 1px solid cyan;
+		}
+	</style>
+
+	<script>
+		function convert(conInput){
 let num = "";
 debugger;
 for(let f = 0; f < conInput.length; f++){
@@ -22,15 +25,17 @@ let character = codeInput.split(",")
 
 document.getElementById("char").value = String.fromCharCode(...character);
 }
-</script>
+
+	</script>
 </head>
+
 <body>
 
-<h2>Code to Character Converter</h2>
+	<h2>Code to Character Converter</h2>
 
-<p> The Code to Character Converter shows you the conversions of characters in code.</p>
+	<p> The Code to Character Converter shows you the conversions of characters in code.</p>
 
-<input type = "text" name = "code" id = "code" oninput = "convertCode(this.value)" />
+	<input type = "text" name = "code" id = "code" oninput = "convertCode(this.value)" />
 
 <input type = "text" name = "character" id = "char" oninput = "convert(this.value)"/>
 
