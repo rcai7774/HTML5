@@ -42,12 +42,13 @@ document.getElementById("result").innerText = "it is odd!"
     for (let f = 2; f <= num; f++){
     while (num % f ===0){
     num = num/f
+    if (f !== prime[prime.length-1]){
     prime.push(f)
+    }
     }
 	 }
     document.getElementById("result").innerText = prime
     }
-
 	</script>
 </head>
 
