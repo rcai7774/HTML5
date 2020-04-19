@@ -27,12 +27,13 @@ document.getElementById("result").innerText = "it is odd!"
     function factorize(){
     let num = document.getElementById("num").value
     let factors = []
-    for (let n = 2; n <+ num; n++){
+    for (let n = 2; n <= num; n++){
     if (num % n === 0){
     factors.push(n)
     }
     }
     document.getElementById("result").innerText = factors
+    return factors;
     }
     
     
@@ -48,7 +49,26 @@ document.getElementById("result").innerText = "it is odd!"
     }
 	 }
     document.getElementById("result").innerText = prime
+
     }
+    function isPrime(){
+      factors = factorize();
+      if (factors.length === 1){
+        document.getElementById("result").innerText = "It is a Prime Number"
+      }
+      else
+      {
+        document.getElementById("result").innerText = "It is not a Prime Number"
+      }
+    }
+    function Pi(){
+let piy = 3
+for(let t = 1; sign = 1; t < 10000; t++){
+piy += ( 4 / ((t*2) * (t*2+1) * (t*2+2))) * sign
+sign = -sign
+}
+document.getElementById("result").innerText = "piy"
+}
 	</script>
 </head>
 
@@ -58,12 +78,14 @@ document.getElementById("result").innerText = "it is odd!"
 	<p>Please enter a number:
 		<input type = " number "  id =  "num">
 </p>
-<button type = "button" onclick = "isOdd()"> is odd? </button>
-<button type = "button" onclick = "perS()"> is perfect square?</button>
+<button type = "button" onclick = "isOdd()"> Is odd? </button>
+<button type = "button" onclick = "perS()"> Is perfect square?</button>
 <button type = "button" onclick = "factorize()"> Factorize </button>
-<button type = "button" onclick = "primefactor()"> prime factorization </button>
-
+<button type = "button" onclick = "primefactor()"> Prime Factorization </button>
+<button type = "button" onclick = "isPrime()">Is Prime?</button>
+<button type = "button" onclick = "Pi()"> Pi </button>
 <output id = "result" />
+<output id = "piyResult"/>
 </body>
 
 </html>
