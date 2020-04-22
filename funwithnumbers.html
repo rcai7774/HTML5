@@ -69,6 +69,20 @@ sign = -sign
 }
 document.getElementById("result").innerText = "piy"
 }
+
+function compare(){
+  let comp1 = document.getElementById("comp1").value
+  let comp2 = document.getElementById("comp2").value
+
+  if (comp1 < comp2) {
+    document.getElementById("compresult").innerText = "<"
+  } else {
+    document.getElementById("compresult").innerText = ">"
+  }
+  if (comp1 === comp2) {
+    document.getElementById("compresult").innerText = "="
+  }
+}
 	</script>
 </head>
 
@@ -86,6 +100,17 @@ document.getElementById("result").innerText = "piy"
 <button type = "button" onclick = "Pi()"> Pi </button>
 <output id = "result" />
 <output id = "piyResult"/>
+<h2> Comparing Numbers and GCD</h2>
+<p>enter numbers in each input</p>
+<input type = "number"  id = "comp1">
+<span id = "compresult"> </span>
+<input type = "number" id = "comp2">
+<p>
+  <button onclick = "compare()"> Compare Values </button>
+  <button onclick = "getGcd()"> Get GCD </button>
+  <div id = "gcdresult" >
+    <p>
+
 </body>
 
 </html>
