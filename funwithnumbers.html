@@ -24,19 +24,21 @@ document.getElementById("result").innerText = "it is odd!"
     }
     }
     
-    function factorize(){
-    let num = document.getElementById("num").value
-    let factors = []
-    for (let n = 2; n <= num; n++){
-    if (num % n === 0){
-    factors.push(n)
-    }
-    }
-    document.getElementById("result").innerText = factors
-    return factors;
+    const factorize = function(num) {
+      let factors = [];
+      for (let n = 1; n <= num; n++) {
+        if (num % n === 0) {
+          factors.push(n)
+        }
+      }
+      return factors;
     }
     
-    
+    function factor() {
+      let num = document.getElementById("num").value
+
+      document.getElementById("result").innerText = factorize(num)
+    }
     function primefactor(){
     let num = document.getElementById("num").value
     let prime = []
@@ -67,12 +69,12 @@ for(let t = 1, sign = 1; t < 10000; t++){
 piy += ( 4 / ((t*2) * (t*2+1) * (t*2+2))) * sign
 sign = -sign
 }
-document.getElementById("result").innerText = "piy"
+document.getElementById("result").innerText = piy
 }
 
 function compare(){
-  let comp1 = document.getElementById("comp1").value
-  let comp2 = document.getElementById("comp2").value
+  let comp1 = 1 * document.getElementById("comp1").value;
+  let comp2 = 1 * document.getElementById("comp2").value;
 
   if (comp1 < comp2) {
     document.getElementById("compresult").innerText = "<"
@@ -83,6 +85,32 @@ function compare(){
     document.getElementById("compresult").innerText = "="
   }
 }
+  function getGcd() {
+    debugger;
+    let com1 = 1 * document.getElementById("comp1").value;
+    let com2 = 1 * document.getElementById("comp2").value;
+    let fAA = factorize(com1)
+    let fAB = factorize(com2)
+
+    let gcd = 1
+    for (; fAA.length > 0 && fAB.length > 0;) {
+      if (fAA[fAA.length - 1] < fAB[fAB.length - 1]) {
+        fAB.pop();
+        continue;
+        }
+        if (fAA[fAA.length - 1] > fAB[fAB.length - 1]) {
+          fAA.pop()
+          continue;
+          }
+          if (fAA[fAA.length - 1] === fAB[fAB.length - 1]) {
+            document.getElementById("gcdresult").innerText = fAA[fAA.length - 1]
+
+            break;
+          
+        }
+      }
+    }
+  
 	</script>
 </head>
 
@@ -94,7 +122,7 @@ function compare(){
 </p>
 <button type = "button" onclick = "isOdd()"> Is odd? </button>
 <button type = "button" onclick = "perS()"> Is perfect square?</button>
-<button type = "button" onclick = "factorize()"> Factorize </button>
+<button type = "button" onclick = "factor()"> Factorize </button>
 <button type = "button" onclick = "primefactor()"> Prime Factorization </button>
 <button type = "button" onclick = "isPrime()">Is Prime?</button>
 <button type = "button" onclick = "Pi()"> Pi </button>
@@ -108,7 +136,7 @@ function compare(){
 <p>
   <button onclick = "compare()"> Compare Values </button>
   <button onclick = "getGcd()"> Get GCD </button>
-  <div id = "gcdresult" >
+  <div id = "gcdresult" > </div>
     <p>
 
 </body>
