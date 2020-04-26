@@ -85,14 +85,11 @@ function compare(){
     document.getElementById("compresult").innerText = "="
   }
 }
-  function getGcd() {
-    debugger;
-    let com1 = 1 * document.getElementById("comp1").value;
-    let com2 = 1 * document.getElementById("comp2").value;
-    let fAA = factorize(com1)
-    let fAB = factorize(com2)
 
-    let gcd = 1
+const gcd = function(com1, com2){
+  let cdmax = 1;
+  let fAA = factorize(com1)
+    let fAB = factorize(com2)
     for (; fAA.length > 0 && fAB.length > 0;) {
       if (fAA[fAA.length - 1] < fAB[fAB.length - 1]) {
         fAB.pop();
@@ -103,14 +100,18 @@ function compare(){
           continue;
           }
           if (fAA[fAA.length - 1] === fAB[fAB.length - 1]) {
-            document.getElementById("gcdresult").innerText = fAA[fAA.length - 1]
-
+            cdmax = fAA[fAA.length - 1]
             break;
-          
-        }
-      }
+          }  
     }
+      return cdmax;
+  }
   
+  function getGcd() {
+    let com1 = 1 * document.getElementById("comp1").value;
+    let com2 = 1 * document.getElementById("comp2").value;
+        document.getElementById("gcdresult").innerText = gcd(com1, com2)
+    }
 	</script>
 </head>
 
