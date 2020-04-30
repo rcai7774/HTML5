@@ -54,8 +54,10 @@ document.getElementById("result").innerText = "it is odd!"
 
     }
     function isPrime(){
-      factors = factorize();
-      if (factors.length === 1){
+			let num = document.getElementById("num").value
+      let factors = factorize(num);
+			debugger;
+      if (factors.length <= 2){
         document.getElementById("result").innerText = "It is a Prime Number"
       }
       else
@@ -88,23 +90,17 @@ function compare(){
 
 const gcd = function(com1, com2){
   let cdmax = 1;
-  let fAA = factorize(com1)
-    let fAB = factorize(com2)
-    for (; fAA.length > 0 && fAB.length > 0;) {
+    for (let fAA = factorize(com1) , fAB = factorize(com2); fAA.length > 0 && fAB.length > 0;) {
+			if (fAA[fAA.length - 1] === fAB[fAB.length - 1]) {
+            cdmax = fAA[fAA.length - 1]
+						return cdmax;
+          } 
       if (fAA[fAA.length - 1] < fAB[fAB.length - 1]) {
         fAB.pop();
-        continue;
-        }
-        if (fAA[fAA.length - 1] > fAB[fAB.length - 1]) {
+        }else{
           fAA.pop()
-          continue;
-          }
-          if (fAA[fAA.length - 1] === fAB[fAB.length - 1]) {
-            cdmax = fAA[fAA.length - 1]
-            break;
           }  
-    }
-      return cdmax;
+    }   
   }
   
   function getGcd() {
@@ -112,6 +108,22 @@ const gcd = function(com1, com2){
     let com2 = 1 * document.getElementById("comp2").value;
         document.getElementById("gcdresult").innerText = gcd(com1, com2)
     }
+
+		
+    function eGCD(com1,com2){
+       
+			 for (let A = 1 * com1 , B = 1*com2){
+			  if (A < B){
+            return gcd(B,A)
+				}
+				continue;
+
+        if (A = 0){
+            return B
+				}
+        return gcd(B, A%B)
+		}
+		}
 	</script>
 </head>
 
