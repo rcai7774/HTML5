@@ -113,6 +113,7 @@ const gcd = function(com1, com2){
     function eGCD(com1,com2){
        
 			 for (let A = 1 * com1 , B = 1*com2){
+			 
 			  if (A < B){
             return gcd(B,A)
 				}
@@ -120,8 +121,10 @@ const gcd = function(com1, com2){
 
         if (A = 0){
             return B
+						break;
 				}
         return gcd(B, A%B)
+				
 		}
 		}
 	</script>
