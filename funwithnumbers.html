@@ -109,23 +109,30 @@ const gcd = function(com1, com2){
         document.getElementById("gcdresult").innerText = gcd(com1, com2)
     }
 
-		
-    function eGCD(com1,com2){
-       
-			 for (let A = 1 * com1 , B = 1*com2){
-			 
-			  if (A < B){
-            return gcd(B,A)
-				}
-				continue;
-
-        if (A = 0){
-            return B
-						break;
-				}
-        return gcd(B, A%B)
-				
+		const EGCD = function(A,B){
+			if (A * B === 0){return A + B;} 
+			if (A < B){[A,B] = [B,A]}
+				return EGCD (B,A%B)
 		}
+
+		function euclid(){
+			let A = 1* document.getElementById("comp1").value;
+			let B = 1* document.getElementById("comp2").value;
+				document.getElementById("gcdresult").innerText = EGCD(A,B)
+		}
+
+		const LCM = function(A,B){
+			for (let m = 1; m <= B; m++){
+				if ((A*m)%B === 0){
+					return A*m
+				}
+			}
+		}
+
+		function getLCM(){
+			let A = 1* document.getElementById("comp1").value;
+			let B = 1* document.getElementById("comp2").value;
+				document.getElementById("gcdresult").innerText = LCM(A,B)
 		}
 	</script>
 </head>
@@ -152,6 +159,8 @@ const gcd = function(com1, com2){
 <p>
   <button onclick = "compare()"> Compare Values </button>
   <button onclick = "getGcd()"> Get GCD </button>
+	<button onclick = "euclid()">Euclidean GCD </button>
+	<button onclick = "getLCM()">Get LCM </button>
   <div id = "gcdresult" > </div>
     <p>
 
