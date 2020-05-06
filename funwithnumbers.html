@@ -24,16 +24,7 @@ document.getElementById("result").innerText = "it is odd!"
     }
     }
     
-    const factorize = function(num) {
-      let factors = [];
-      for (let n = 1; n <= num; n++) {
-        if (num % n === 0) {
-          factors.push(n)
-        }
-      }
-      return factors;
-    }
-    
+  
     function factor() {
       let num = document.getElementById("num").value
 
@@ -88,32 +79,12 @@ function compare(){
   }
 }
 
-const gcd = function(com1, com2){
-  let cdmax = 1;
-    for (let fAA = factorize(com1) , fAB = factorize(com2); fAA.length > 0 && fAB.length > 0;) {
-			if (fAA[fAA.length - 1] === fAB[fAB.length - 1]) {
-            cdmax = fAA[fAA.length - 1]
-						return cdmax;
-          } 
-      if (fAA[fAA.length - 1] < fAB[fAB.length - 1]) {
-        fAB.pop();
-        }else{
-          fAA.pop()
-          }  
-    }   
-  }
-  
+
   function getGcd() {
     let com1 = 1 * document.getElementById("comp1").value;
     let com2 = 1 * document.getElementById("comp2").value;
         document.getElementById("gcdresult").innerText = gcd(com1, com2)
     }
-
-		const EGCD = function(A,B){
-			if (A * B === 0){return A + B;} 
-			if (A < B){[A,B] = [B,A]}
-				return EGCD (B,A%B)
-		}
 
 		function euclid(){
 			let A = 1* document.getElementById("comp1").value;
@@ -121,20 +92,17 @@ const gcd = function(com1, com2){
 				document.getElementById("gcdresult").innerText = EGCD(A,B)
 		}
 
-		const LCM = function(A,B){
-			for (let m = 1; m <= B; m++){
-				if ((A*m)%B === 0){
-					return A*m
-				}
-			}
-		}
-
+		
 		function getLCM(){
 			let A = 1* document.getElementById("comp1").value;
 			let B = 1* document.getElementById("comp2").value;
 				document.getElementById("gcdresult").innerText = LCM(A,B)
 		}
 	</script>
+	<title>Fun With Numbers </title>
+	<script src = "math/numbers.js">
+
+		</script>
 </head>
 
 <body>
