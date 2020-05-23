@@ -35,4 +35,3 @@ const gcd = function(com1, com2){
       }
       return factors;
     }
-    

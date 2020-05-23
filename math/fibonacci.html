@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src = "fibonacci.js">
+		</script>
+</head>
+<body>
+<h1></h1>
+<img src = "https://images.ctfassets.net/d7jrd3vkrjh8/5xLzWCnqaBFx6QUpvhuRhg/5c2a123771664463122cb0f8005e06de/fibonacci-initial-numbers-calculation.svg">
+<p>
+<button type = "button" onclick = "shrinkSeq()">&lt--Shrink Sequence</button>
+	<button type = "button"  onclick = "growSeq()">Grow Sequence --&gt</button>
+	<br>
+	<button type = "button" onclick = "shrinkUp()">--&gtShrink Up</button>
+	<button type = "button" onclick = "growDown()">&lt--Grow Down</button>
+	<div id = "sequence">Sequence:</div>
+	<div id = "next">Next Number:</div>
+		<br>
+	<h1>The Golden Ratio</h1>
+	The golden ratio is the ratio of the last number in the Fibonacci sequence divided be the next to last number.
+	<br>
+	<button type = "button" onclick = "gRatio()">Golden Ratio</button>
+	<br>
+	<div id = "golden">Result: </div>
+	<div id = "fsequence">Fancy :/</div>
+</p>
+<script>
+	document.getElementById("sequence").innerText = fib.sequence
+	function growSeq(){
+		 fib.grow()
+		document.getElementById("next").innerText= fib.nextNum()
+		document.getElementById("sequence").innerText = fib.sequence
+		fancySeq()
+	}
+	function shrinkSeq(){
+		fib.shrink()
+		document.getElementById("next").innerText = fib.sequence
+		document.getElementById("sequence").innerText = fib.sequence
+	}
+	function shrinkUp(){
+		fib.sUp()
+		document.getElementById("sequence").innerText = fib.sequence	
+	}
+	function growDown(){
+		fib.gDown()
+		document.getElementById("sequence").innerText = fib.sequence
+	}
+	function gRatio(){
+		document.getElementById("golden").innerText = fib.gold()
+	}
+	function fancySeq() {
+		let html = ""
+		for(let z = 0; z < fib.sequence.length; z++){
+			`<span style="color:blue;background-color:orange;font-size:120%;" title="0+1">${fib.sequence[z]}</span>`
+		}
+		document.getElementById("fsequence").innerHTML = html
+	}
+</script>
+</body>
+</html>
