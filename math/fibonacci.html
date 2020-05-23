@@ -51,7 +51,7 @@
 	function fancySeq() {
 		let html = ""
 		for(let z = 0; z < fib.sequence.length; z++){
-			`<span style="color:blue;background-color:orange;font-size:120%;" title="0+1">${fib.sequence[z]}</span>`
+			html += ` <span style="color:blue;background-color:orange;font-size:120%;" title="0+1">${fib.sequence[z]}</span>`
 		}
 		document.getElementById("fsequence").innerHTML = html
 	}
