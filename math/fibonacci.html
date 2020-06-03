@@ -22,7 +22,6 @@
 	<button type = "button" onclick = "gRatio()">Golden Ratio</button>
 	<br>
 	<div id = "golden">Result: </div>
-	<div id = "fsequence">Fancy :/</div>
 </p>
 <script>
 	document.getElementById("sequence").innerText = fib.sequence
@@ -34,16 +33,15 @@
 	}
 	function shrinkSeq(){
 		fib.shrink()
-		document.getElementById("next").innerText = fib.sequence
-		document.getElementById("sequence").innerText = fib.sequence
+		fancySeq()
 	}
 	function shrinkUp(){
 		fib.sUp()
-		document.getElementById("sequence").innerText = fib.sequence	
+		fancySeq()
 	}
 	function growDown(){
 		fib.gDown()
-		document.getElementById("sequence").innerText = fib.sequence
+		fancySeq()
 	}
 	function gRatio(){
 		document.getElementById("golden").innerText = fib.gold()
@@ -51,9 +49,10 @@
 	function fancySeq() {
 		let html = ""
 		for(let z = 0; z < fib.sequence.length; z++){
-			html += ` <span style="color:blue;background-color:orange;font-size:120%;" title="0+1">${fib.sequence[z]}</span>`
+			let title = fib.sequence[z-2] + "+" + fib.sequence[z-1]
+			html += ` <span style="color:black;background-color:${(fib.sequence[z] % 2 === 0)? "DarkCyan" : "Wheat"};font-size:120%;" title=${title}>${fib.sequence[z]}</span>`
 		}
-		document.getElementById("fsequence").innerHTML = html
+		document.getElementById("sequence").innerHTML = html
 	}
 </script>
 </body>

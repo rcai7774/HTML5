@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Statistics</title>
+	<script src="stats.js"></script>
+	<script>
+		let nums = []
+	function genScores(){
+		nums = []
+			for(let s = 1; s < 32; s++){
+				nums.push(Math.round(40 + Math.random()*100/(1+2/3)))
+		}
+		document.getElementById("scores").value = nums
+	}
+
+	function getMax(){
+		document.getElementById("sresult").innerHTML = "The Highest Score is : " + max(nums)
+	}
+
+	function getMin(){
+		document.getElementById("sresult").innerHTML = "The Lowest Score is: " + min(nums)
+	}
+
+	function getRange(){
+		document.getElementById("sresult").innerHTML = "The Range of Scores is: " + range(nums)
+	}
+
+	function getMean(){
+		document.getElementById("sresult").innerHTML = "The Mean of Scores is: " + mean(nums)
+	}
+
+	function getMedian(){
+			debugger;
+		median(nums)
+		document.getElementById("sresult").innerHTML = "The Median of Scores is: " + median(nums)
+	}
+	</script>
+</head>
+
+<body style="background-color:#ccffff;">
+	<h1>Statistics</h1>
+	<p>
+		<button type = "button" onclick = "genScores()">Generate Test Scores</button>
+<br>
+<br>
+<textarea rows = "5" cols = "50" name= "scores" style = "background-color:#e6ffff;" id = "scores"></textarea>
+<br>
+<br>
+<button type = "button" onclick = "getMax()">Maximum Score</button>
+<button type = "button" onclick = "getMean()">Average Score</button>
+<button type = "button" onclick = "getMin()">Minimum Score</button>
+<br>
+<br>
+<button type = "button" onclick = "getRange()">Range of Scores</button>
+<button type = "button" onclick = "getMedian()">Median Score</button>
+<button type = "button" onclick = "getIQR()">Interquartile Range</button>
+<br>
+<br>
+Result: <div id = "sresult"></div>
+<br>
+<br>
+<br>
+<button type = "button" onclick = "getGrades()">Convert to Grades</button><b> : <b>
+<br>
+<br>
+<textarea rows = "5" cols = "50" name = "grades" style = "background-color:#e6ffff;"></textarea>
+<br>
+<br>
+<button type = "button" onclick = "getMode()">Most Common Score</button>
+<br>
+<br>
+</p>
+</body>
+</html>
