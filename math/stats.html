@@ -3,7 +3,8 @@
 
 <head>
 	<title>Statistics</title>
-	<script src="stats.js"></script>
+	<script src="stats.js">
+	</script>
 	<script>
 		let nums = []
 	function genScores(){
@@ -31,9 +32,19 @@
 	}
 
 	function getMedian(){
-			debugger;
 		median(nums)
 		document.getElementById("sresult").innerHTML = "The Median of Scores is: " + median(nums)
+	}
+
+	function getSort(){
+		sort(nums)
+		document.getElementById("scores").value = sort(nums)
+	}
+
+	function getIQR(){
+		IQR(nums)
+		document.getElementById("sresult").innerHTML = IQR(nums)
+		//IQR relies on the range between the 1st and 3rd quartiles, which can be found by getting the median between the median number and the minimum number, and getting the median between the median number and the maximum number.
 	}
 	</script>
 </head>
@@ -55,6 +66,9 @@
 <button type = "button" onclick = "getRange()">Range of Scores</button>
 <button type = "button" onclick = "getMedian()">Median Score</button>
 <button type = "button" onclick = "getIQR()">Interquartile Range</button>
+<br>
+<br>
+<button type = "button" onclick = "getSort()">Sort Scores</button>
 <br>
 <br>
 Result: <div id = "sresult"></div>

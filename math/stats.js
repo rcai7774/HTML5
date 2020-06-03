@@ -31,11 +31,41 @@ const mean = function (nums) {
 const median = function (nums) {
 	let sorted = nums.sort();
 	let answer = ""
-	if (sorted.length % 2 === 1){
-		answer = (sorted[Math.floor(sorted.length/ 2)])
+	if (sorted.length % 2 === 1) {
+		answer = (sorted[Math.floor(sorted.length / 2)])
 	}
-	else{
-answer = ((sorted[sorted.length / 2] + sorted[sorted.length/2 - 1]) / 2 )
+	else {
+		answer = ((sorted[sorted.length / 2] + sorted[sorted.length / 2 - 1]) / 2)
 	}
 	return answer;
+}
+
+const sort = function (nums) {
+	for (let k = 0; k < nums.length; k++) {
+		let index = k;
+		let min = nums[k]
+		for (let l = k + 1; l < nums.length; l++) {
+			if (nums[l] < min) {
+				min = nums[l];
+				index = l;
+			}
+		}
+		if (index !== k) {
+			[nums[index], nums[k]] = [nums[k], nums[index]]
+		}
+	}
+	return nums;
+}
+
+const IQR = function (nums){
+	let sorted = nums.sort();
+	let answer = ""
+	let interquartile = ""
+	if(sorted.length % 2 ===1) {
+		answer = (sorted[Math.floor(sorted.length / 2)])
+	}else{
+		answer = ((sorted[sorted.length / 2] + sorted[sorted.length / 2 - 1])/2)
+	}
+	return answer;
+	
 }
