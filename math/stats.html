@@ -4,6 +4,7 @@
 <head>
 	<title>Statistics</title>
 	<script src="stats.js">
+
 	</script>
 	<script>
 		let nums = []
@@ -41,10 +42,12 @@
 		document.getElementById("scores").value = sort(nums)
 	}
 
-	function getIQR(){
-		IQR(nums)
-		document.getElementById("sresult").innerHTML = IQR(nums)
-		//IQR relies on the range between the 1st and 3rd quartiles, which can be found by getting the median between the median number and the minimum number, and getting the median between the median number and the maximum number.
+	function getGrades(){
+		let grades = []
+		for(let g = 0; g < nums.length; g++){
+			grades.push(toGrade(nums[g]))
+		}
+		document.getElementById("grades").value = grades
 	}
 	</script>
 </head>
@@ -75,10 +78,10 @@ Result: <div id = "sresult"></div>
 <br>
 <br>
 <br>
-<button type = "button" onclick = "getGrades()">Convert to Grades</button><b> : <b>
+<button type = "button" onclick = "getGrades()">Convert to Grades</button>
 <br>
 <br>
-<textarea rows = "5" cols = "50" name = "grades" style = "background-color:#e6ffff;"></textarea>
+<textarea rows = "5" cols = "50" name = "grades"  id = "grades" style = "background-color:#e6ffff;"></textarea>
 <br>
 <br>
 <button type = "button" onclick = "getMode()">Most Common Score</button>

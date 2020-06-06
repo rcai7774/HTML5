@@ -57,15 +57,4 @@ const sort = function (nums) {
 	return nums;
 }
 
-const IQR = function (nums){
-	let sorted = nums.sort();
-	let answer = ""
-	let interquartile = ""
-	if(sorted.length % 2 ===1) {
-		answer = (sorted[Math.floor(sorted.length / 2)])
-	}else{
-		answer = ((sorted[sorted.length / 2] + sorted[sorted.length / 2 - 1])/2)
-	}
-	return answer;
-	
-}
+const toGrade = (score) => score < 60 ? "F" : score < 70 ? "D" : score < 80 ? "C" : score < 90 ? "B" : "A"; 
