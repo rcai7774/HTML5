@@ -1,4 +1,4 @@
-const max = function (nums) {
+ const max = function (nums) {
 	let m = nums[0];
 	for (let i = 1; i < nums.length; i++) {
 		if (m < nums[i]) { m = nums[i] }
@@ -57,4 +57,44 @@ const sort = function (nums) {
 	return nums;
 }
 
-const toGrade = (score) => score < 60 ? "F" : score < 70 ? "D" : score < 80 ? "C" : score < 90 ? "B" : "A"; 
+const toGrade = (score) => score < 60 ? "F" : score < 70 ? "D" : score < 80 ? "C" : score < 90 ? "B" : "A";
+
+/*const mode = function (grades) {
+	let modeGrade = ""
+	let maxCount = 0;
+	let cCount = 0;
+	let cElement = ""
+	for (let n = 1; n < grades.length; n++) {
+		if (grades[n - 1] !== grades[n]) {
+			if (cCount > maxCount) {
+				maxCount = cCount;
+				cCount = 0;
+				modeGrade = cElement;
+			}
+			cCount = 0;
+			cElement = grades[n];
+		}
+		cCount++;
+	}
+	return cCount > maxCount ? cElement : modeGrade;
+}*/
+
+const modeO = function (grades) {
+	let counter = {};
+	for(let o = 0; o < grades.length; o++){
+		if(grades[o] in counter){
+			counter[grades[o]]++
+		} else {
+			counter[grades[o]] = 0;
+		}
+	}
+	let mode = ""
+	let maxCount = 0;
+	for(c in counter){
+		if(maxCount < counter[c]){
+			maxCount = counter[c]; 
+			mode = c;
+			}
+	}
+	return mode;
+}

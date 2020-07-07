@@ -43,11 +43,30 @@
 	}
 
 	function getGrades(){
-		let grades = []
-		for(let g = 0; g < nums.length; g++){
-			grades.push(toGrade(nums[g]))
-		}
-		document.getElementById("grades").value = grades
+		document.getElementById("grades").value = sort(nums.map(toGrade))
+	}
+
+	/*function betaMode(){
+		list = [1,2,3,4,5,6,7,7]
+let empty = [];
+let i = 0;
+let max = 0;
+while (i<list.length){
+
+   if (list[i]==list[i+1]){
+       empty = list[i] 
+   i += 1
+    }else{
+      i +=1
+      }
+
+ }
+ document.getElementById("moderesult").innerHTML = empty
+	}*/
+
+	function getMode(){
+		debugger;
+		document.getElementById("moderesult").innerHTML = modeO(nums.map(toGrade))
 	}
 	</script>
 </head>
@@ -84,7 +103,10 @@ Result: <div id = "sresult"></div>
 <textarea rows = "5" cols = "50" name = "grades"  id = "grades" style = "background-color:#e6ffff;"></textarea>
 <br>
 <br>
-<button type = "button" onclick = "getMode()">Most Common Score</button>
+<button type = "button" onclick = "getMode()">Most Common Grade</button>
+<br>
+<br>
+Most Common Grade: <div id = "moderesult"></div>
 <br>
 <br>
 </p>
